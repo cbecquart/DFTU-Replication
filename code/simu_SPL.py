@@ -8,7 +8,6 @@ from FTU.ftu_approx import folding_test_approx
 from FTU.double_ftu import double_folding_test
 from utils import generate_gaussian_mixture, generate_dirac_mixture, generate_gauss_unif_mixture
 from diptest import diptest
-# import timeit
 
 
 # Parameters

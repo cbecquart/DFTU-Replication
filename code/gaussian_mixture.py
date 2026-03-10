@@ -1,9 +1,6 @@
 """
 Explore a mixture of 2 Gaussian distributions, in particular the impact of the parameter sigma. Plot the behaviour of
-the folding statistic, the pivot s^*, the cdf and pdf of the distribution.
-
-It is important to center the data for the formula of the function f. Var=1 or B=1 is not necessary, just be careful to
-update the formula of the variance in create_points_for_given_sigma().
+Phi*, the pivot s^*, the cdf and pdf of the distribution.
 """
 
 
@@ -85,8 +82,6 @@ def plot_ftu_and_pivot_vs_sigma_sq():
         row=1, col=1)
     fig.add_trace(go.Scatter(x=sigma_sq_arr, y=Phi_star, mode='markers', line=dict(color='black')),
                   row=1, col=1)
-    # fig.add_trace(go.Scatter(x=sigma_sq_arr, y=s_star, mode='markers', line=dict(color='black')),
-    #               row=2, col=1)
     fig.add_vline(x=sigma1 ** 2, line=dict(color='darkblue', dash='dash'),
                   annotation_text=str(np.round(sigma1 ** 2, 2)),
                   annotation=dict(font=dict(color='darkblue')), annotation_position="bottom")
@@ -97,14 +92,13 @@ def plot_ftu_and_pivot_vs_sigma_sq():
     fig.add_vline(x=sigma4 ** 2, line=dict(color='#8FD9FB', dash='dash'), annotation_text=str(np.round(sigma4 ** 2, 1)),
                   annotation=dict(font=dict(color='#8FD9FB')), annotation_position="bottom")
 
-    fig.update_yaxes(title_text="FTU statistic", row=1, col=1)
-    # fig.update_yaxes(title_text="Exact pivot", row=2, col=1)
+    fig.update_yaxes(title_text="SFR", row=1, col=1)
     fig.update_xaxes(tickvals=[0, 1, 2, 3, 4, 5, 6, 7], ticktext=["", "", "", "3", "4", "5", "6", ""], row=1, col=1)
     fig.update_xaxes(tickvals=[0, 1, 2, 3, 4, 5, 6, 7], ticktext=["", "", "", "3", "4", "5", "6", ""], row=2, col=1)
     fig.update_traces(marker=dict(size=3))
     fig.update_annotations(font_size=20)
     fig.update_layout(width=1500, height=320, template="plotly_white", font=dict(size=20), showlegend=False)
-    fig.write_image(f"../results/plots_Example2/ftu_vs_sigma_sq.png")
+    fig.write_image(f"../results/plots_Example2/sfr_vs_sigma_sq.png")
 
 
 def plot_pdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
@@ -159,8 +153,6 @@ def plot_pdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
         row=1, col=4)
     fig.add_vline(x=x_min4, line=dict(color='#8FD9FB', dash='dash'), annotation_text="s*",
                   annotation=dict(font=dict(color='#8FD9FB')), annotation_position="top", row=1, col=4)
-    # fig.update_yaxes(tickvals=[0, 0.5, 1], row=1, col=4)
-    # fig.update_xaxes(tickvals=[-6, -3, 0, 3, 6], row=1, col=4)
 
     fig.update_layout(
         width=1500, height=300,
@@ -199,8 +191,6 @@ def plot_cdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
 
     fig.add_trace(go.Scatter(x=x, y=mixture_cdf4, mode='lines', name="σ² = "+str(sigma4**2), line=dict(color='#8FD9FB')),
                   row=1, col=4)
-    # fig.update_yaxes(tickvals=[-0.5, 0, 0.5, 1, 1.5], row=1, col=4)
-    # fig.update_xaxes(tickvals=[-9, -6, -3, 0, 3, 6, 9], row=1, col=4)
 
     fig.update_layout(
         width=1500, height=300,

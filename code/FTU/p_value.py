@@ -1,8 +1,6 @@
 import numpy as np
 from ftu_non_approx import folding_test_raw
 from ftu_Rmigration import folding_test2
-# from FTU.ftu_non_approx import folding_test_raw
-# from FTU.ftu_Rmigration import folding_test2
 
 m = 10**3
 
