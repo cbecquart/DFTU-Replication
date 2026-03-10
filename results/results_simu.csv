@@ -1,0 +1,9 @@
+model,ftu_approx,ftu_raw,dftu,diptest
+GMM1,2,2,2,2
+GMM2,2,2,2,2
+GUM1,0,0,0,0
+GUM2,0,0,1,2
+DMM1,2,2,0,0
+GMM3,2,2,2,2
+DMM2,2,2,0,0
+GMM4,2,2,0,0
