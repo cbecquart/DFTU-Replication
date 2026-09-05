@@ -1,5 +1,5 @@
 """
-Simulations used in the SPL paper. The FTU*, FTU**, DFTU and dip-test are computed on different univariate mixtures.
+Simulations used in the paper. The FTU*, FTU**, DFTU and dip-test are computed on different univariate mixtures.
 """
 import numpy as np
 import pandas as pd
