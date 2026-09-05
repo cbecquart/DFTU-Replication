@@ -98,7 +98,7 @@ def plot_ftu_and_pivot_vs_sigma_sq():
     fig.update_traces(marker=dict(size=3))
     fig.update_annotations(font_size=20)
     fig.update_layout(width=1500, height=320, template="plotly_white", font=dict(size=20), showlegend=False)
-    fig.write_image(f"../results/plots_Example2/sfr_vs_sigma_sq.png")
+    fig.write_image(f"../results/plots_Example2/sfr_vs_sigma_sq.pdf")
 
 
 def plot_pdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
@@ -162,7 +162,7 @@ def plot_pdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
     fig.update_annotations(font_size=20)
     fig.update_layout(showlegend=False)
 
-    fig.write_image(f"../results/plots_Example2/pdf_2_gaussian.png")
+    fig.write_image(f"../results/plots_Example2/pdf_2_gaussian.pdf")
 
 
 def plot_cdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
@@ -200,7 +200,7 @@ def plot_cdf_2_gaussian(mu1, mu2, eps1, eps2, sigma1, sigma2, sigma3, sigma4):
     fig.update_annotations(font_size=20)
     fig.update_layout(showlegend=False)
 
-    fig.write_image(f"../results/plots_Example2/cdf_2_gaussian.png")
+    fig.write_image(f"../results/plots_Example2/cdf_2_gaussian.pdf")
 
 
 if __name__ == "__main__":

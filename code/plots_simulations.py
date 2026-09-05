@@ -14,24 +14,24 @@ def generate_gauss_unif_mixture(x, eps, n, sigma=0.5):
 
 def plot_save_histo(data, i, binsize, x_range):
     fig = go.Figure()
-    fig.add_trace(go.Histogram(x=data, histfunc="count", xbins=dict(size=binsize), marker_color="lightblue"))
+    fig.add_trace(go.Histogram(x=data, histfunc="count", xbins=dict(size=binsize), marker_color="rgb(223, 140, 163)"))
     fig.update_xaxes(showticklabels=False, range=x_range)
     fig.update_yaxes(showticklabels=False)
     fig.update_layout(width=700, height=400,
                       margin=dict(l=5, r=5, t=5, b=5),
                       template="plotly_white")
-    fig.write_image(f"../results/plots_simulations/histo{i}.png")
+    fig.write_image(f"../results/plots_simulations/histo{i}.pdf")
 
 
 def plot_save_ecdf(data, i):
     fig = px.ecdf(data)
     fig.update_xaxes(showticklabels=False, showgrid=False, title="")
     fig.update_yaxes(showticklabels=False, title="")
-    fig.update_traces(line=dict(width=8))
+    fig.update_traces(line=dict(width=8), marker_color="rgb(154, 9, 72)")
     fig.update_layout(width=700, height=400,
                       margin=dict(l=5, r=5, t=5, b=5),
                       template="plotly_white", showlegend=False)
-    fig.write_image(f"../results/plots_simulations/ecdf{i}.png")
+    fig.write_image(f"../results/plots_simulations/ecdf{i}.pdf")
 
 
 # 1: N(0, 1)

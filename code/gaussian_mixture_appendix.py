@@ -51,14 +51,14 @@ def plot_results(mu, eps, sigma1, sigma2, sigma3, i):
     titles = (title1, title2, title3)
 
     fig = make_subplots(rows=1, cols=3, start_cell="top-left", subplot_titles=titles)
-    fig.add_trace(go.Histogram(x=data1, marker_color="lightblue"), row=1, col=1)
-    fig.add_trace(go.Histogram(x=data2, marker_color="lightblue"), row=1, col=2)
-    fig.add_trace(go.Histogram(x=data3, marker_color="lightblue"), row=1, col=3)
+    fig.add_trace(go.Histogram(x=data1, marker_color="rgb(223, 140, 163)"), row=1, col=1)
+    fig.add_trace(go.Histogram(x=data2, marker_color="rgb(223, 140, 163)"), row=1, col=2)
+    fig.add_trace(go.Histogram(x=data3, marker_color="rgb(223, 140, 163)"), row=1, col=3)
 
     fig.update_layout(width=1400, height=320, font=dict(size=19),
                       template="plotly_white", showlegend=False)
     fig.update_annotations(font_size=22)
-    fig.write_image(f"../results/plots_gaussian_appendix/gaussian_details{i}.png")
+    fig.write_image(f"../results/plots_gaussian_appendix/gaussian_details{i}.pdf")
 
 
 # Case 1: 3 groups - Both fail
