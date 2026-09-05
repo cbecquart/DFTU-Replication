@@ -58,7 +58,7 @@ def plot_results(mu, eps, sigma1, sigma2, sigma3, i):
     fig.update_layout(width=1400, height=320, font=dict(size=19),
                       template="plotly_white", showlegend=False)
     fig.update_annotations(font_size=22)
-    fig.write_image(f"../results/plots_gaussianSPL/gaussian_details{i}.png")
+    fig.write_image(f"../results/plots_gaussian_appendix/gaussian_details{i}.png")
 
 
 # Case 1: 3 groups - Both fail

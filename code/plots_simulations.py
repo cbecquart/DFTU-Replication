@@ -20,7 +20,7 @@ def plot_save_histo(data, i, binsize, x_range):
     fig.update_layout(width=700, height=400,
                       margin=dict(l=5, r=5, t=5, b=5),
                       template="plotly_white")
-    fig.write_image(f"../results/plots_tableSPL/histo{i}.png")
+    fig.write_image(f"../results/plots_simulations/histo{i}.png")
 
 
 def plot_save_ecdf(data, i):
@@ -31,7 +31,7 @@ def plot_save_ecdf(data, i):
     fig.update_layout(width=700, height=400,
                       margin=dict(l=5, r=5, t=5, b=5),
                       template="plotly_white", showlegend=False)
-    fig.write_image(f"../results/plots_tableSPL/ecdf{i}.png")
+    fig.write_image(f"../results/plots_simulations/ecdf{i}.png")
 
 
 # 1: N(0, 1)
@@ -67,17 +67,17 @@ fig = plot_save_histo(data, i=4, binsize=0.36, x_range=[-3, 8])
 plot_save_ecdf(data, 4)
 
 
-# 5: 0.2 D(-2) + 0.4 D(0) + 0.4 D(2)
+# 5: 1/3 D(-2) + 1/3 D(0) + 1/3 D(2)
 data = generate_dirac_mixture(mu=np.array([-2, 0, 2]),
-                              eps=np.array([0.2, 0.4, 0.4]),
+                              eps=np.array([1/3, 1/3, 1/3]),
                               n=2000)
 fig = plot_save_histo(data, i=5, binsize=0.23, x_range=[-3.5, 3.5])
 plot_save_ecdf(data, 5)
 
 
-# 6: 0.2 N(-2, 0.5) + 0.4 N(0, 0.5) + 0.4 N(2, 0.5)
+# 6: 1/3 N(-2, 0.5) + 1/3 N(0, 0.5) + 1/3 N(2, 0.5)
 data = generate_gaussian_mixture(mu=np.array([-2, 0, 2]),
-                                 eps=np.array([0.2, 0.4, 0.4]),
+                                 eps=np.array([1/3, 1/3, 1/3]),
                                  sigma=0.5, n=2000)
 fig = plot_save_histo(data, i=6, binsize=0.23, x_range=[-3.5, 3.5])
 plot_save_ecdf(data, 6)
